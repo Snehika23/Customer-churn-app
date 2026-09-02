@@ -63,8 +63,8 @@ if uploaded_file:
     st.session_state.df_raw = df
     st.success(f"✅ Dataset loaded — {df.shape[0]:,} rows × {df.shape[1]} columns")
 
-        st.subheader("Preview")
-        st.dataframe(df.head(10), use_container_width=True)
+    st.subheader("Preview")
+    st.dataframe(df.head(10), use_container_width=True)
 
         col1, col2 = st.columns(2)
         with col1:
