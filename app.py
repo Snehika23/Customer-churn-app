@@ -56,19 +56,10 @@ tab1, tab2, tab3 = st.tabs(["📂 Data & EDA", "🤖 Train Model", "🔮 Predict
 # ─────────────────────────────────────────────────────────────────────────────
 with tab1:
     st.header("Upload Dataset")
-GITHUB_CSV_URL = "https://raw.githubusercontent.com/Snehika23/Customer-churn-app/main/Telco-Customer-Churn.csv"
-
-uploaded_file = st.file_uploader("Upload your own CSV (optional)", type=["csv"])
+uploaded_file = st.file_uploader("Upload Telco-Customer-Churn.csv", type=["csv"])
 
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
-else:
-    try:
-        df = pd.read_csv(GITHUB_CSV_URL)
-        st.success("✅ Dataset loaded automatically from GitHub!")
-    except:
-        st.error("Could not load dataset. Please upload the CSV manually.")
-        df = None
         st.session_state.df_raw = df
         st.success(f"✅ Dataset loaded — {df.shape[0]:,} rows × {df.shape[1]} columns")
 
