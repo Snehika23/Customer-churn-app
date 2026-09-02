@@ -56,15 +56,15 @@ tab1, tab2, tab3 = st.tabs(["📂 Data & EDA", "🤖 Train Model", "🔮 Predict
 # ─────────────────────────────────────────────────────────────────────────────
 with tab1:
     st.header("Upload Dataset")
-uploaded_file = st.file_uploader("Upload Telco-Customer-Churn.csv", type=["csv"])
+    uploaded_file = st.file_uploader("Upload Telco-Customer-Churn.csv", type=["csv"])
 
-if uploaded_file:
-    df = pd.read_csv(uploaded_file)
-    st.session_state.df_raw = df
-    st.success(f"✅ Dataset loaded — {df.shape[0]:,} rows × {df.shape[1]} columns")
+    if uploaded_file:
+        df = pd.read_csv(uploaded_file)
+        st.session_state.df_raw = df
+        st.success(f"✅ Dataset loaded — {df.shape[0]:,} rows × {df.shape[1]} columns")
 
-    st.subheader("Preview")
-    st.dataframe(df.head(10), use_container_width=True)
+        st.subheader("Preview")
+        st.dataframe(df.head(10), use_container_width=True)
 
         col1, col2 = st.columns(2)
         with col1:
