@@ -61,7 +61,7 @@ uploaded_file = st.file_uploader("Upload Telco-Customer-Churn.csv", type=["csv"]
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
     st.session_state.df_raw = df
-        st.success(f"✅ Dataset loaded — {df.shape[0]:,} rows × {df.shape[1]} columns")
+    st.success(f"✅ Dataset loaded — {df.shape[0]:,} rows × {df.shape[1]} columns")
 
         st.subheader("Preview")
         st.dataframe(df.head(10), use_container_width=True)
